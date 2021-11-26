@@ -6,4 +6,4 @@ This is a TodoApp which was built using React Js coupled with HTML and CSS. My g
 
 At the present, this app follows an order in which it must be completed (top to bottom) as a normal todo list completion follows. Further changes will be made to make it more flexible and will be uploaded here.
 
-Access the app here https://kmarquez01.github.io/react-todo
+Access the app here https://kmarquez01.github.io/todoapp
