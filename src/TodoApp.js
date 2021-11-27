@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import TodoList from "./Components/TodoList"
 import TodoForm from "./Components/TodoForm"
 import "./styledelements.css"
-
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 
@@ -58,6 +57,21 @@ function TodoApp(){
         setTodos(revisedTodos)
         console.log(revisedTodos)
     }
+
+    /*
+    const deleteAll = (todo) => {
+        event.preventDefault();
+        const todoIndex = todos.findIndex((task) => task.id === todo.id)
+        const updatedTodos = [...todos];
+
+        const updatedTodo = updatedTodos[todoIndex];
+        updatedTodo[todoIndex] = updatedTodos
+        setTodos(updatedTodos.filter((index) => index.id !== todo.id)); 
+        console.log(updatedTodos)
+        console.log(todo)
+    }
+
+    */
   
 
     return(
@@ -65,7 +79,7 @@ function TodoApp(){
         
         <div className = "background">
             <div className = "container">
-                {todos ? <TodoList setTodos = {setTodos} todos = {todos} checkTodo = {checkTodo} addItem = {addItem} /> : <div>Hello</div> }
+                {todos ? <TodoList setTodos = {setTodos} todos = {todos} checkTodo = {checkTodo} addItem = {addItem}/> : <div>Hello</div> }
                 <TodoForm todos = {todos} setTodos = {setTodos} checkTodo = {checkTodo} onSubmit = {addItem}/>
             </div>
         </div>

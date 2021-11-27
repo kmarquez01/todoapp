@@ -38,6 +38,7 @@ body{
     background-color: lightblue;
     position: relative;
     display: grid;
+    grid-template-columns: 400px;
     text-align: -webkit-center;
     font-family: sans-serif;
     padding: 50px 50px;
@@ -64,6 +65,20 @@ body{
     align-items: center;
     gap: 30px;
     justify-content: center;
+}
+
+
+.buttoncontainer{
+    padding: 20px;
+}
+.showmore{
+    display: block;
+    padding: 10px;
+    font-weight: bold;
+    background-color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
 }
 
 input[type=checkbox]{

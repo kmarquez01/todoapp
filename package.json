@@ -1,6 +1,6 @@
 {
-  "name": "todotest",
-  "homepage": "https://kmarquez01.github.io/Todoapp/",
+  "name": "todoapp",
+  "homepage": "https://kmarquez01.github.io/todoapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
