@@ -4,9 +4,7 @@ import TodoApp from './TodoApp';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <TodoApp />
-  </React.StrictMode>,
+    <TodoApp />,
   document.getElementById('root')
 );
 
