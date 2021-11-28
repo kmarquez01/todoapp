@@ -1,6 +1,6 @@
 import {useState} from "react"
 import TodoForm from "./TodoForm"
-function Todo({setTodos, todos, checkTodo, todo, handleSubmit}){
+function Todo({setTodos, todos, checkTodo, todo, handleSubmit, reviseTodo}){
 
     const [edit, setEdit] = useState({
         id: null,
@@ -34,20 +34,24 @@ function Todo({setTodos, todos, checkTodo, todo, handleSubmit}){
 
 
     const editItem = (title) => {
+
+        reviseTodo(edit.id, title)
         
-        checkTodo(edit.id)
-        setEdit({
-            id: null,
-            title: edit.title,
-            userId: 1,
-            completed: false
-        })
+
+        const todoIndex = todos.findIndex((task) => task.id === todo.id)
+        const updatedTodos = [...todos];
+
+        const updatedTodo = updatedTodos[todoIndex];
+        updatedTodo[todoIndex] = updatedTodos
+        setTodos(updatedTodos);
+        console.log("hello")
+        
     }
 
 
 
     if(edit.id){
-        return <TodoForm edit = {edit} onClick = {handleSubmit} />
+        return <TodoForm edit = {edit} onClick = {editItem} />
     }
 
     return (
@@ -66,10 +70,11 @@ function Todo({setTodos, todos, checkTodo, todo, handleSubmit}){
             Delete
             </button>
             <button
+            type = "submit"
             style = {todo.completed ? show: {display: 'none'}}
             onClick = {() => setEdit(
                 {id: todo.id, 
-                 title: todo.id, 
+                 title: todo.title, 
                  userId: todo.userId, 
                  completed: todo.compelted})}
             
