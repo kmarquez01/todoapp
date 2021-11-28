@@ -40,6 +40,13 @@ function TodoList ({ todos, setTodos, checkTodo, handleInput, removeItem}) {
 
     }
 
+    const reviseTodo = (todoId, newValue) => {
+        if(!newValue.title){
+            return;
+        }
+       setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)))
+    }
+
 
     return (
         <form className = "todoList">
@@ -49,6 +56,7 @@ function TodoList ({ todos, setTodos, checkTodo, handleInput, removeItem}) {
 
             <button className = "showmore" onClick = {hiddenAPI === true ? hideAPI : revealAPI}>Hide/Show API</button>
             </div>
+            <div className = "todo-items-container">
             {todos.map((todo) => (
                 
                 <Todo setTodos = {setTodos} 
@@ -57,12 +65,13 @@ function TodoList ({ todos, setTodos, checkTodo, handleInput, removeItem}) {
                 checkTodo = {checkTodo} 
                 todo = {todo}
                 key = {todo.id} 
+                reviseTodo = {reviseTodo}
                 
                  />
                 
             ))}
 
-            
+            </div>
 
 
 
