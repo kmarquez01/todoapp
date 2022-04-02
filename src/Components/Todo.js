@@ -8,6 +8,7 @@ function Todo({setTodos, todos, checkTodo, todo, handleSubmit, reviseTodo}){
         userId: 1,
         completed: false
     })
+    
 
     const done = {
         fontStyle: "normal",
@@ -48,6 +49,22 @@ function Todo({setTodos, todos, checkTodo, todo, handleSubmit, reviseTodo}){
         
     }
 
+         /* <button
+            type = "submit"
+            style = {todo.completed ? show: {display: 'none'}}
+            onClick = {() => setEdit(
+                {id: todo.id, 
+                 title: todo.title, 
+                 userId: todo.userId, 
+                 completed: todo.compelted})}
+            
+            
+            className = "garbage-can"
+        
+            >
+            Edit
+            </button>
+            */
 
 
     if(edit.id){
@@ -69,21 +86,8 @@ function Todo({setTodos, todos, checkTodo, todo, handleSubmit, reviseTodo}){
             >
             Delete
             </button>
-            <button
-            type = "submit"
-            style = {todo.completed ? show: {display: 'none'}}
-            onClick = {() => setEdit(
-                {id: todo.id, 
-                 title: todo.title, 
-                 userId: todo.userId, 
-                 completed: todo.compelted})}
             
-            
-            className = "garbage-can"
         
-            >
-            Edit
-            </button>
                 
          </div>
    
